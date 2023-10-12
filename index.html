@@ -1,0 +1,104 @@
+<html>
+ <title>Eye Movement</title>
+<head>
+
+ <style>
+    body {
+ margin: 0;
+ padding: 0;
+ background: gray;
+ overflow-x: hidden;
+}
+
+.eyes {
+ position: absolute;
+ top: 50%;
+ right: 15%;
+ transform: translateY(-50%);
+ width: 100%;
+ text-align: center;
+}
+
+.eyes2 {
+ position: absolute;
+ top: 50%;
+ left: 15%;
+ transform: translateY(-50%);
+ width: 100%;
+ text-align: center;
+}
+.eye {
+ width: 240px;
+ height: 120px;
+ background: #fff;
+ display: inline-block;
+ margin: 40px;
+ border-radius: 50%;
+ position: relative;
+ overflow: hidden;
+}
+
+.eye2 {
+ width: 240px;
+ height: 120px;
+ background: #fff;
+ display: inline-block;
+ margin: 40px;
+ border-radius: 50%;
+ position: relative;
+ overflow: hidden;
+}
+
+.ball {
+ width: 80px;
+ height: 80px;
+ background: #000;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ border-radius: 50%;
+}
+
+.ball2 {
+ width: 80px;
+ height: 80px; 
+ background: #000;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ border-radius: 50%;
+}
+ </style>
+</head>
+<script>
+    const balls = document.getElementsByClassName('ball');
+const balls2 = document.getElementsByClassName('ball2');
+
+document.onmousemove = (event) => {
+  const x = (event.clientX * 100) / window.innerWidth + '%';
+  const y = (event.clientY * 100) / window.innerHeight + '%';
+
+  balls[0].style.left = x;
+  balls[0].style.top = y;
+  balls[0].transform = 'translate(-' + x + ',-' + y + ')';
+  balls2[0].style.left = x;
+  balls2[0].style.top = y;
+  balls2[0].transform = 'translate(-' + x + ',-' + y + ')';
+};
+</script>
+<body>
+ <div class="eyes">
+   <div class="eye">
+     <div class="ball"></div>
+   </div>
+ </div>
+ <div class="eyes2">
+   <div class="eye2">
+     <div class="ball2"></div>
+   </div>
+ </div>
+</body>
+<script src="big-cartoon-eyes.png"></script>
+</html>
